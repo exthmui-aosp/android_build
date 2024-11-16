@@ -500,6 +500,13 @@ function lunch()
 
 function _lunch_meat()
 {
+    if (echo -n $1 | grep -q -e "^exthm_") ; then
+        EXTHM_BUILD=$(echo -n $1 | sed -e 's/^exthm_//g')
+    else
+        EXTHM_BUILD=
+    fi
+    export EXTHM_BUILD
+
     local product=$1
     local release=$2
     local variant=$3
