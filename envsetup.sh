@@ -548,7 +548,7 @@ function lunch()
     fi
 
     local product release variant
-
+    
     # Handle the legacy format
     local legacy=$(echo $1 | grep "-")
     if [[ $# -eq 1 && -n $legacy ]]; then
@@ -573,6 +573,8 @@ function lunch()
             variant=eng
         fi
     fi
+
+    check_product $product $release
 
     # Validate the selection and set all the environment stuff
     _lunch_meat $product $release $variant
