@@ -581,3 +581,6 @@ $(call soong_config_set, appsearch, enable_isolated_storage, $(RELEASE_APPSEARCH
 
 # Enable AppSearch Isolated Storage per BUILD flag
 PRODUCT_PRODUCT_PROPERTIES += ro.appsearch.feature.enable_isolated_storage=$(RELEASE_APPSEARCH_ENABLE_ISOLATED_STORAGE)
+
+# Enable CrashRecovery 
+PRODUCT_APEX_SYSTEM_SERVER_JARS += com.android.crashrecovery:service-crashrecovery
